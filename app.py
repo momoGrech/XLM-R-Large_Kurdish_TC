@@ -16,7 +16,7 @@ model,tokenizer=get_model(repo_id)
 
 # st.write("Text Classification in the Kurdish Sorani Language using fine-tuned XLM-RoBERTa Model")
 st.markdown("""
-    <h2 style='text-align: center; color: black;'>
+    <h2 style='text-align: center; color: #3b3b3b;'>
         Text Classification in the Kurdish Sorani Language Using Fine-Tuned XLM-RoBERTa Model
     </h2>
 """, unsafe_allow_html=True)
@@ -29,11 +29,6 @@ user_input = st.text_area(
 
 def clear_text():
   st.session_state["text"] = ''  
-
-
-# classifyButton = st.button("Classify Text")
-
-# st.button("Clear text", on_click=clear_text)
 
 def clear_text():
     st.session_state["text"] = ''
