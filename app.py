@@ -4,6 +4,8 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
 import pandas as pd
 
+torch.classes.__path__ = []
+
 repo_id = "MomoGrech/XLM-R-Large_Kurdish_Sorani_Text_Classification"
 
 @st.cache_resource
