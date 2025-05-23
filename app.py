@@ -67,7 +67,12 @@ st.markdown("""
 files = st.file_uploader("Upload a file", type=["csv", "txt"], accept_multiple_files=True)
  
 # Read files and keep their names
-texts = [(file.name, file.read().decode('utf-8')) for file in files]
+@st.cache_data
+def read_uploaded_files(files):
+    return [(file.name, file.read().decode("utf-8")) for file in files]
+
+
+texts = read_uploaded_files(files)
 
 # Trigger classification when button is pressed
 if texts and classifyButton:
